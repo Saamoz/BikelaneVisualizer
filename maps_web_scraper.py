@@ -16,7 +16,7 @@ def screenshot_page(location):
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), chrome_options=chrome_options)
     url = f"https://www.google.com/maps/place/{location}/data=!5m1!1e3"
     driver.get(url)
-    sleep(4)
+    sleep(5)
 
     # hovers over the layer selector then unselects the layers option
     layer_selector = driver.find_elements(By.XPATH, '/html/body/div[3]/div[9]/div[23]/div[5]/div/div[2]/button')

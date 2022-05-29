@@ -11,6 +11,7 @@ def filter_bikelanes(input_path, output_path):
     upperb = np.array([60, 255, 255])
 
     mask = cv2.inRange(hsv, lowerb, upperb)  # mask just the green bikelane color
+    write_pbm(mask)
 
     # applies the mask to the original image
     imask = mask > 0
@@ -21,10 +22,9 @@ def filter_bikelanes(input_path, output_path):
     kernel = np.ones((2, 2), np.uint8)
     final = cv2.erode(final, kernel, iterations=1)
 
-    final = cv2.GaussianBlur(final, (3, 3), 0)
+    # final = cv2.GaussianBlur(final, (3, 3), 0)
 
     cv2.imwrite(output_path, final)
-    write_pbm(final)
 
 
 def crop_image(image_path):
@@ -58,10 +58,9 @@ def write_svg(contours, output_path):
 
 
 def write_pbm(image):
-    h, grey, v = cv2.split(image)
-    threshold = 10
-    grey[grey < threshold] = 1
-    grey[grey >= threshold] = 0
+    image = np.copy(image)
+    image[image <= 1] = 1
+    image[image > 1] = 0
     with open('temp/pbm_image.pbm', 'w') as fd:
-        fd.write("P1\n%i %i\n" % grey.shape[::-1])
-        fd.write("\n".join(" ".join(str(i) for i in j) for j in grey))
+        fd.write("P1\n%i %i\n" % image.shape[::-1])
+        fd.write("\n".join(" ".join(str(i) for i in j) for j in image))
