@@ -7,7 +7,7 @@ def filter_bikelanes(input_path, output_path):
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
     # The color bounds for the dark green color used by maps in HSV
-    lowerb = np.array([50, 0, 0])
+    lowerb = np.array([50, 40, 0])
     upperb = np.array([60, 255, 255])
 
     mask = cv2.inRange(hsv, lowerb, upperb)  # mask just the green bikelane color
