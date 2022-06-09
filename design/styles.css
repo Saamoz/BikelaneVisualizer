@@ -1,0 +1,29 @@
+body {background-color: black;}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}
+
+.grid > div {
+  background: white;
+  padding: 0em;
+}
+
+.grid > div::before {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+
+.grid > div {
+  /* ... */
+  display: grid;
+}
+.grid > div::before,
+
+.grid > div > img {
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+}
