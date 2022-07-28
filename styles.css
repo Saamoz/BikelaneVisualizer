@@ -1,0 +1,84 @@
+body {background-color: black;}
+
+th {background-color: white;}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  margin: 5em 5em 5em 5em;
+}
+
+.grid > div {
+  background: white;
+  padding: 0.25em;
+}
+
+.grid > div::before {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+
+.grid > div {
+  /* ... */
+  display: grid;
+}
+.grid > div::before,
+
+.grid > div > img {
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+h1 {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: "DIN Condensed";
+  font-weight: bold;
+  font-size: 1000%;
+  margin: 0;
+}
+
+p {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: "DIN Condensed";
+  font-weight: bold;
+  font-size: 500%;
+  margin: 0;
+}
+
+.city {
+  position: absolute;
+  margin-top: 0.25em;
+  margin-left: 0.25em;
+  text-align: center;
+  color: white;
+  font-family: "DIN Condensed";
+  font-weight: bold;
+  font-size: 150%;
+}
+
+.country {
+  position: absolute;
+  margin-top: 1.75em;
+  margin-left: 0.4em;
+  text-align: center;
+  color: white;
+  font-family: "DIN Condensed";
+  font-weight: bold;
+  font-size: 100%;
+}
+
+/*.text {
+  text-align: center;
+  color: red;
+  font-family: "DIN Condensed";
+  font-weight: bold;
+  font-size: 150%;
+  position: relative;
+  bottom: 210px;
+} */
