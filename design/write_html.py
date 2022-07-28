@@ -1,9 +1,16 @@
 import os
 f = open('header.txt')
 body = f.read().split('\n')
-# plz don't use i if its a name
+
+i = 0
+body.append('<tr>')
 for name in sorted(os.listdir("./svg")):
 	body.append("<th>" + name.split('.')[0] + "<img src='svg/" + name + "' alt=''></th>")
+
+	if i % 7 == 0:
+		body.append('</tr><tr>')
+
+	i = i + 1
 
 body.append('</tr>')
 body.append('</table>')
