@@ -1,23 +1,35 @@
 body {background-color: black;}
-table th {
-  background-color: black; 
-  padding: 50px;
-  width: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  /* border-color: white; */
-  /* border-width: 5px; */
-  /* border: 5px solid white; */
-  padding: 10px;
-  }
-img {
-    background-color: white; 
-    width: 75%;
+
+th {background-color: white;}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  margin: 5em 5em 5em 5em;
 }
 
-/* table {
-    border: white;
-} */
+.grid > div {
+  background: white;
+  padding: 0.25em;
+}
+
+.grid > div::before {
+  content: "";
+  padding-bottom: 100%;
+  display: block;
+}
+
+.grid > div {
+  /* ... */
+  display: grid;
+}
+.grid > div::before,
+
+.grid > div > img {
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+}
 
 h1 {
   position: relative;
