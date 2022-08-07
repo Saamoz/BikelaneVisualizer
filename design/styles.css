@@ -7,26 +7,24 @@ body {background-color: black;}
   margin: 5em 5em 5em 5em;
 }
 
-.grid > div {
+.image-container {
   background: white;
   padding: 0.25em;
 }
 
-.grid > div::before {
-  content: "";
-  padding-bottom: 100%;
-  display: block;
-}
-
-.grid > div {
-  /* ... */
-  display: grid;
-}
-.grid > div::before,
-
-.grid > div > img {
+.image-container > img {
   width: 100%;
-  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+}
+
+.text-container {
+  text-align: center;
+}
+
+.text-container > h3 {
+  color: white;
+  text-transform: uppercase;
+  font-family: Helvetica;
 }
 
 h1 {
