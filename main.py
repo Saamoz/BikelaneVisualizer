@@ -27,5 +27,5 @@ if __name__ == '__main__':
             print(f"Exporting bike lanes for {city_name}")
             if do:
                 get_city_bikelanes(city_name)
-        make_webpage('output/svg')
+    make_webpage('output/svg')
 
