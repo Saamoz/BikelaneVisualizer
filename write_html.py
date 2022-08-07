@@ -14,7 +14,7 @@ def make_webpage(svg_folder_path):
                f'<h3>{city_name}</h3>' \
                f'</div>' \
                f'<div class="image-container">' \
-               f'<img src="{svg_folder_path}/{svg_filename}" alt=''>' \
+               f'<img src="../{svg_folder_path}/{svg_filename}" alt=''>' \
                '</div>' \
                '</div>'
         f.write(line)
