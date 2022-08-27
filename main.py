@@ -15,7 +15,7 @@ def get_city_bikelanes(city_name):
 
 
 if __name__ == '__main__':
-    # get_city_bikelanes("Antwerp, BE")
+    get_city_bikelanes("Birmingham, GB")
     # city_list_file = "all_cities.csv"
     # with open(city_list_file, 'r', encoding='utf-8') as csvfile:
     #     datareader = csv.reader(csvfile)
@@ -29,4 +29,4 @@ if __name__ == '__main__':
     #         print(f"Exporting bike lanes for {city_name}")
     #         if do:
     #             get_city_bikelanes(city_name)
-    make_webpage('output/svg')
+    # make_webpage('output/svg')
