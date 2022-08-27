@@ -16,17 +16,17 @@ def get_city_bikelanes(city_name):
 
 if __name__ == '__main__':
     # get_city_bikelanes("Antwerp, BE")
-    city_list_file = "all_cities.csv"
-    with open(city_list_file, 'r', encoding='utf-8') as csvfile:
-        datareader = csv.reader(csvfile)
-        datareader.__next__()
-        start_name = ""
-        do = False
-        for row in datareader:
-            city_name = ", ".join(row)
-            if not start_name or start_name in city_name:
-                do = True
-            print(f"Exporting bike lanes for {city_name}")
-            if do:
-                get_city_bikelanes(city_name)
+    # city_list_file = "all_cities.csv"
+    # with open(city_list_file, 'r', encoding='utf-8') as csvfile:
+    #     datareader = csv.reader(csvfile)
+    #     datareader.__next__()
+    #     start_name = ""
+    #     do = False
+    #     for row in datareader:
+    #         city_name = ", ".join(row)
+    #         if not start_name or start_name in city_name:
+    #             do = True
+    #         print(f"Exporting bike lanes for {city_name}")
+    #         if do:
+    #             get_city_bikelanes(city_name)
     make_webpage('output/svg')
