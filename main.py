@@ -15,7 +15,7 @@ def get_city_bikelanes(city_name):
 
 
 if __name__ == '__main__':
-    get_city_bikelanes("Birmingham, GB")
+    get_city_bikelanes("Naples, IT")
     # city_list_file = "all_cities.csv"
     # with open(city_list_file, 'r', encoding='utf-8') as csvfile:
     #     datareader = csv.reader(csvfile)
