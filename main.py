@@ -8,7 +8,6 @@ image_output_folder_name = "output"
 
 
 def get_city_bikelanes(city_name):
-    city = city_name.split(',')[0]
     screenshot_path = screenshot_page(city_name)
     cropped_image = crop_image(screenshot_path)
     filter_bikelanes(cropped_image, f'{image_output_folder_name}/png/{city_name} Bikelanes.png')
@@ -16,6 +15,7 @@ def get_city_bikelanes(city_name):
 
 
 if __name__ == '__main__':
+    # get_city_bikelanes("Antwerp, BE")
     city_list_file = "all_cities.csv"
     with open(city_list_file, 'r', encoding='utf-8') as csvfile:
         datareader = csv.reader(csvfile)
